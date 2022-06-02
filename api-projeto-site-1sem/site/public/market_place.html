@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HowTo play | Loja </title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/icon/HowTO (2).png">
+    <style>
+        #produtos {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2%;
+            display: flex;
+        }
+
+        #carrinho {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2%;
+            display: block;
+        }
+
+        .produto-unico {
+            width: 33.3%;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"></h1>
+            <ul class="navbar">
+                <li class="agora">Inicial</li>
+
+                <li>|</li>
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+                <li>
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h2> Vitrine: </h2>
+    <div id="produtos">
+
+    </div>
+
+    <h2> Carrinho:</h2>
+    <div id="carrinho">
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    const items = [
+        {
+            id: 0,
+            nome: 'Violão Acústico GS-15 Gianinni',
+            img: './assets/imgs/Gianinni.png',
+            quantidade: 0
+
+        },
+        {
+            id: 1,
+            nome: 'Guitarra Fender Stratocaster',
+            img: './assets/imgs/Stratocaster.png',
+            quantidade: 0
+
+        },
+        {
+            id: 2,
+            nome: 'Teclado Yamaha NP12-Piaggero ',
+            img: './assets/imgs/Piaggero.png',
+            quantidade: 0
+
+        },
+        {
+            id: 3,
+            nome: 'Bateria acústica Michael Legacy DML422',
+            img: './assets/imgs/Michael.png',
+            quantidade: 0
+
+        },
+        {
+            id: 4,
+            nome: 'Cavaquinho Cedro Ferreirinha',
+            img: './assets/imgs/Ferreirinha.png',
+            quantidade: 0
+
+        },
+        {
+            id: 5,
+            nome: 'Contra-Baixo Strinberg JBS40',
+            img: './assets/imgs/Strinberg.png',
+            quantidade: 0
+
+        },
+        {
+            id: 6,
+            nome: 'Ukulele Soprano Memphis',
+            img: './assets/imgs/Memphis.png',
+            quantidade: 0
+
+        },
+
+    ]
+
+
+    startLoja = () => {
+        var containerProdutos = document.getElementById('produtos');
+        items.map((val) => {
+            console.log(val.nome)
+            containerProdutos.innerHTML += `
+        <div class = "produto-unico">
+            <img src =" `+ val.img + `"
+            <p>`+ val.nome + `</p>
+            <a id= "a" key = "`+val.id+`" href="#"> Adicionar ao carrinho</a>
+            </div>
+        `;
+        })
+    }
+    startLoja();
+
+    inserirCarrinho = () => {
+        console.log(items)
+        var containerCarrinho = document.getElementById('carrinho');
+        containerCarrinho.innerHTML = "";
+        items.map((val) => {
+            console.log(val.nome)
+            if (val.quantidade > 0) {
+
+                containerCarrinho.innerHTML += `
+                
+                <p>`+val.nome+` | quantidade: `+val.quantidade+`</p>
+                 
+                `
+            }
+        })
+    }
+
+        
+    var links = document.getElementsByTagName('a');
+
+        for (let i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function () {
+                let key = this.getAttribute('key');
+                items[key].quantidade++;
+                inserirCarrinho();
+                return false;
+            });
+
+        }
+
+</script>
