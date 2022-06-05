@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(216, 147, 19);
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+  }
+  
+  .header {
+    border-bottom: 3px solid #9c6512;
+  }
+  
+  .header .container {
+    justify-content: space-between;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .agora {
+    font-weight: 800;
+  }
+  
+  .navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: #f7f7f7;
+  }
+  
+  
+  .titulo {
+    color: #ffffff;
+    width: fit-content;
+    font-weight: 500;
+    
+  }
+
+ *{ 
+     font-family: 'lato',sans-serif;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box; 
+ }
+ #produtos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%; 
+    display: flex;
+}
+
+#carrinho {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2%;
+    display: block;
+}
+
+.produto-unico {
+    width: 32%;
+    margin-right: 1%;
+ border: 1px solid black;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+
+h2{
+    background-color: blue;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.produto-unico img{
+max-width: 100%;
+
+}
+
+.produto-unico p{
+ text-align: center;
+ font-size: 16px;
+ padding: 10px;
+}
+.produto-unico a{ 
+
+    text-decoration: none;
+    color: white;
+    background-color: #9c6512;
+    text-align: center;
+    display: block;
+    padding: 4px 0;
+    font-size: 18px;
+}
