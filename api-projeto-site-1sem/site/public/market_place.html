@@ -9,40 +9,53 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/icon/HowTO (2).png">
     <link rel="stylesheet" href="./css/market_place.css">
-    <script src="./js/carrossel.js"></script>
+
 </head>
 
 <body style="background-color: white;">
-    <div  style=" background-color: rgb(216, 147, 19);"class="header">
+    <div style=" background-color: rgb(216, 147, 19);" class="header">
         <div class="container">
             <h1 class="titulo"></h1>
             <ul class="navbar">
-                <li class="agora">Inicial</li>
+                <li>
+                    <a href="index.html">Inicial</a>
+                </li>
+
 
                 <li>|</li>
+                <li class="agora">Loja</li>
                 <li>
                     <a href="./login.html">Login</a>
                 </li>
                 <li>
                     <a href="./cadastro.html">Cadastro</a>
                 </li>
+
             </ul>
         </div>
     </div>
+
+
     <div class="garantia">
         <div class="container">
-    <center><img  src="./assets/imgs/ola.gif" ></center>
-                
-           
+            <center><img src="./assets/imgs/ola.gif"></center>
+
+
         </div><br><br>
-      
+
     </div>
- 
+
     <div id="produtos">
 
     </div>
 
-   
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+    <div id="carrinho">
 
     </div>
     <div class="footer">
@@ -51,15 +64,18 @@
             <h6>v1.0.1</h6>
         </div>
     </div>
+
+
 </body>
 
 </html>
 <script>
-  
+var comprado = []
     const items = [
         {
             id: 0,
             nome: 'Violão Acústico GS-15 Gianinni',
+            preço: 'R$450,00',
             img: './assets/imgs/Gianinni.png',
             quantidade: 0
 
@@ -67,6 +83,7 @@
         {
             id: 1,
             nome: 'Guitarra Fender Stratocaster',
+            preço: 'R$850,00',
             img: './assets/imgs/Stratocaster.png',
             quantidade: 0
 
@@ -74,6 +91,7 @@
         {
             id: 2,
             nome: 'Teclado Yamaha Piaggero ',
+            preço: 'R$1550,00',
             img: './assets/imgs/Piaggero.png',
             quantidade: 0
 
@@ -81,6 +99,7 @@
         {
             id: 3,
             nome: 'Bateria Michael DML422',
+            preço: 'R$2.700,00',
             img: './assets/imgs/Michael.png',
             quantidade: 0
 
@@ -88,6 +107,7 @@
         {
             id: 4,
             nome: 'Cavaquinho Cedro Ferreirinha',
+            preço: 'R$600,00',
             img: './assets/imgs/Ferreirinha.png',
             quantidade: 0
 
@@ -95,6 +115,7 @@
         {
             id: 5,
             nome: 'Contra-Baixo Strinberg JBS40',
+            preço: 'R$1.200,00',
             img: './assets/imgs/Strinberg.png',
             quantidade: 0
 
@@ -102,6 +123,7 @@
         {
             id: 6,
             nome: 'Ukulele Soprano Memphis',
+            preço: 'R$150,00',
             img: './assets/imgs/Memphis.png',
             quantidade: 0
 
@@ -117,8 +139,8 @@
             containerProdutos.innerHTML += `
         <div class = "produto-unico">
             <img src =" `+ val.img + `"
-            <p>`+ val.nome + `</p>
-            <a id= "a" key = "`+val.id+`" href="#"> Adicionar ao carrinho</a>
+            <p>`+ val.nome + `</p>` + val.preço + `<br> 
+            <button id= "a" key = "`+ val.id + `" onclick ="inserirCarrinho()"> Comprar</button>
             </div>
         `;
         })
@@ -135,24 +157,24 @@
 
                 containerCarrinho.innerHTML += `
                 
-                <p>`+val.nome+` | quantidade: `+val.quantidade+`</p>
+                <p>`+ val.nome + ` | quantidade: ` + val.quantidade + `</p>
                  
                 `
             }
         })
     }
 
-        
+
     var links = document.getElementsByTagName('a');
 
-        for (let i = 0; i < links.length; i++) {
-            links[i].addEventListener("click", function () {
-                let key = this.getAttribute('key');
-                items[key].quantidade++;
-                inserirCarrinho();
-                return false;
-            });
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function () {
+            let key = this.getAttribute('key');
+            items[key].quantidade++;
+            inserirCarrinho();
+            return false;
+        });
 
-        }
+    }
 
 </script>
