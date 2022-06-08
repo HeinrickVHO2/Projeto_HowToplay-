@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Login</title>
+    <title>HowTO play| Login</title>
 
     <script src="./js/funcoes.js"></script>
 
@@ -24,16 +24,16 @@
 
     <div class="header">
         <div class="container">
-            <h1 class="titulo">AcquaTec</h1>
+            <h1 class="titulo">
+
+            </h1>
             <ul class="navbar">
                 <li>
                     <a href="./index.html">
                         Inicial
                     </a>
                 </li>
-                <li>
-                    <a href="./simulador.html">Simulador</a>
-                </li>
+            
                 <li>|</li>
                 <li>
                     <a href="./market_place.html">Loja</a>
@@ -49,25 +49,32 @@
     </div>
 
 
-    <div class="banner">
+    <div class="banner" style="background-image: url(./assets/imgs/fundo_login.jpg);height: 700px;">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
         </div>
         <div class="container">
+            <div class="foto">
+            <img src="./assets/imgs/logo (2).png" alt="">
+        </div>
             <div class="card">
-                <h2>Olá de volta!</h2>
+                <h2>Login</h2>
                 <div class="formulario">
 
 
                     <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="Login">
+                    <input id="email_input" type="text" placeholder="Digite seu e-mail">
 
                     <span class="tipo_campo">Senha:</span>
                     <input id="senha_input" type="password" placeholder="******">
 
                     <button class="btn" onclick="entrar()">Entrar</button>
+                    <div id="cas">
+
+                        Não tem cadastro?<a href="cadastro.html">Cadastre-se</a>
+                    </div>
 
 
                 </div>
@@ -83,10 +90,11 @@
         </div>
     </div>
 
+
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+            <h4>Todos os direitos reservados&copy; HowTo play 2022</h4>
         </div>
     </div>
     <!--footer fim-->

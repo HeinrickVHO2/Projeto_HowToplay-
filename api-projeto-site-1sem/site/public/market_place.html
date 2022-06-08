@@ -13,7 +13,7 @@
 </head>
 
 <body style="background-color: white;">
-    <div style=" background-color: rgb(216, 147, 19);" class="header">
+    <div style=" background-color: black;" class="header">
         <div class="container">
             <h1 class="titulo"></h1>
             <ul class="navbar">
@@ -55,13 +55,17 @@
 
 
     </div>
+    <h2 >Carrinho</h2>
     <div id="carrinho">
+<h2 style="background-color: white;color: black;"> carrinho está vazio no momento! Adicione algum item</h2>
 
     </div>
+    <center><button class="btnca" onclick="window.location.href ='login.html'">Prosseguir pro checkout</button></center>
     <div class="footer">
+
         <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
-            <h6>v1.0.1</h6>
+            <h4>Todos os direitos reservados&copy; HowTo play 2022</h4>
+            <h6></h6>
         </div>
     </div>
 
@@ -70,7 +74,7 @@
 
 </html>
 <script>
-var comprado = []
+    var comprado = []
     const items = [
         {
             id: 0,
@@ -140,7 +144,7 @@ var comprado = []
         <div class = "produto-unico">
             <img src =" `+ val.img + `"
             <p>`+ val.nome + `</p>` + val.preço + `<br> 
-            <button id= "a" key = "`+ val.id + `" onclick ="inserirCarrinho()"> Comprar</button>
+            <a key ="`+ val.id + `" href="#"> Comprar </a>
             </div>
         `;
         })
@@ -156,9 +160,13 @@ var comprado = []
             if (val.quantidade > 0) {
 
                 containerCarrinho.innerHTML += `
-                
-                <p>`+ val.nome + ` | quantidade: ` + val.quantidade + `</p>
-                 
+                <div class= "checkout">
+                <p style =" float:left;">Produto: `+ val.nome + `</p> 
+                <p style ="float:right;">Quantidade: ` + val.quantidade + `</p><br>
+                <p> Preço: `+val.preço+`</p>
+                 <div style="clear:both"></div>
+                 <hr>
+                 </div>
                 `
             }
         })
@@ -172,7 +180,7 @@ var comprado = []
             let key = this.getAttribute('key');
             items[key].quantidade++;
             inserirCarrinho();
-            return false;
+          
         });
 
     }

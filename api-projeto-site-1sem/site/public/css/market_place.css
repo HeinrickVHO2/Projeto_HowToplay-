@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(216, 147, 19);
+    background-color: black;
   }
   .banner {
     height: fit-content;
@@ -32,8 +32,9 @@ body {
   }
   
   .header {
-    border-bottom: 3px solid #9c6512;
+    border-bottom: 3px solid black;
     height: 50px;
+    background-color: black;
   }
   
   .header .container {
@@ -95,11 +96,55 @@ body {
  border-radius: 10px;
  box-shadow: 0px 0px 10px rgba(0,0,0,.2);
 }
+.btnca{ 
+  width: 50%;
+  background-color: transparent;
+  border: 2px black solid;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: .2s;
+  color: black;
+
+}
+.btnca:hover{ 
+  background-color: #b4b4b4;
+  letter-spacing: 2px;
+}
+
+.produto-unico a{
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border: solid 2px black;
+  transition: .2s;
+text-align: center;
+display: block;
+cursor: pointer;
+text-transform: uppercase;
+border-radius: 5px;
+font-size: 13px;
+
+}
+.produto-unico a:hover{
+  background-color: #b4b4b4;
+  letter-spacing: 2px;
+}
 
 h2{
-    background-color: blue;
+    background-color: black;
     padding: 10px 0;
     text-align: center;
+    color: #ffffff;
+}
+
+.checkout{
+ 
+  border-bottom: 2px dotted;
+  padding: 10px 0;
 }
 
 .produto-unico img{
